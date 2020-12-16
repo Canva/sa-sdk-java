@@ -33,7 +33,8 @@ main() {
     "${SNAPSHOT_HOME}" \
     "${S3_REPOSITORY_URL}" \
     --recursive \
-    --exclude "**/*/maven-metadata.xml*"
+    --exclude "**/*/maven-metadata.xml*" \
+    --acl "bucket-owner-full-control"
 
   echo "--- Success"
 }
