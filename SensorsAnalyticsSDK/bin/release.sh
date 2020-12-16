@@ -30,6 +30,7 @@ main() {
   echo "--- Deploying maven artifact to S3"
 
   aws s3 cp \
+    --profile build \
     "${SNAPSHOT_HOME}" \
     "${S3_REPOSITORY_URL}" \
     --recursive \
