@@ -19,6 +19,8 @@ main() {
     exit 1
   fi
 
+  local profile="$1"
+
   echo "--- Building artifacts"
 
   rm -rf "${SNAPSHOT_HOME}"
@@ -30,7 +32,7 @@ main() {
   echo "--- Deploying maven artifact to S3"
 
   aws s3 cp \
-    --profile build \
+    --profile "${profile}" \
     "${SNAPSHOT_HOME}" \
     "${S3_REPOSITORY_URL}" \
     --recursive \
